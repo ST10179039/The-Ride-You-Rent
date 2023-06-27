@@ -1,0 +1,53 @@
+﻿@model IEnumerable<The_Ride_You_Rent.models.Driver>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DMobile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DMobile)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DriverId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DriverId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DriverId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

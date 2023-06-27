@@ -1,0 +1,53 @@
+﻿@model The_Ride_You_Rent.models.Inspector
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Inspector</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InspectorId" class="control-label"></label>
+                <input asp-for="InspectorId" class="form-control" />
+                <span asp-validation-for="InspectorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspectorNo" class="control-label"></label>
+                <input asp-for="InspectorNo" class="form-control" />
+                <span asp-validation-for="InspectorNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IName" class="control-label"></label>
+                <input asp-for="IName" class="form-control" />
+                <span asp-validation-for="IName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IEmail" class="control-label"></label>
+                <input asp-for="IEmail" class="form-control" />
+                <span asp-validation-for="IEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IMobile" class="control-label"></label>
+                <input asp-for="IMobile" class="form-control" />
+                <span asp-validation-for="IMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
